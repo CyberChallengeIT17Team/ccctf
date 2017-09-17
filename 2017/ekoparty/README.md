@@ -14,8 +14,8 @@ Each function compares one character from input with one character in the range 
 We get the flag writing down each character in order 
 ### MobCipher
 We are asked to dump a flag from an .apk file.  
-Unzipping the file we see that this is a cordova/ionic app.  
-Let's look for the flag searching for `EKO` in the assets.
+Unzipping the file we see that it is a cordova/ionic app.  
+We look for the flag searching for the string `EKO`.
 We find these lines in `assets/www/build/main.js`
 ```javascript
         ...
@@ -24,7 +24,7 @@ We find these lines in `assets/www/build/main.js`
         ...
         this.plainflag = 'EKO{' + result + '}';
         ...
-        ... [rootParams]="{\'p1\': \'Eko2017Passphrase\' ...
+        ... [rootParams]="{\'p1\': \'Eko2017Passphrase\'" ...
 ```
 Looking at the source code we see the decryption function used and guess that:
 - the encrypted flag is `sdvejusrskmgmwpzwyznsrhbcivhhtkski`
