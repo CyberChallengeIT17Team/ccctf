@@ -3,8 +3,12 @@
 ### Rhapsody
 It is an ELF 64-bit executable.  
 At 0x401378 we see a lot of conditional jumps with a repeating pattern:
-- call a function
-- 'fail' if it returns 0
+```
+0x00401394      b800000000     mov eax, 0
+0x00401399      e8e2f8ffff     call fcn.00400c80    // call a function
+0x0040139e      85c0           test eax, eax
+0x004013a0      750a           jne 0x4013ac         // stop if it returns 0
+```
 
 Each function compares one character from input with one character in the range [0x4a2739-0x4a275d].  
 We get the flag writing down each character in order 
