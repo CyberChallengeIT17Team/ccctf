@@ -2,8 +2,8 @@
 ## Reversing
 ### MobCipher
 We are asked to dump a flag from an .apk file.  
-Unzipping the file we see that this is a cordova/ionic app.  
-Let's look for the flag searching for `EKO` in the assets.
+Unzipping the file we see that it is a cordova/ionic app.  
+We look for the flag searching for the string `EKO`.
 We find these lines in `assets/www/build/main.js`
 ```javascript
         ...
