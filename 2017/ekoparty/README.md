@@ -11,7 +11,7 @@ At 0x401378 we see a lot of conditional jumps with a repeating pattern:
 ```
 
 Each function compares one character from input with one character in the range [0x4a2739-0x4a275d].  
-We get the flag writing down each character in order 
+We get the flag writing down each character in call order 
 ### MobCipher
 We are asked to dump a flag from an .apk file.  
 Unzipping the file we see that it is a cordova/ionic app.  
