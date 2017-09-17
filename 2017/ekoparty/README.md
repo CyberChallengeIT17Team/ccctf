@@ -1,5 +1,13 @@
 # [EKOPARTY CTF 2017](https://ctf.ekoparty.org/)
 ## Reversing
+### Rhapsody
+It is an ELF 64-bit executable.  
+At 0x401378 we see a lot of conditional jumps with a repeating pattern:
+- call a function
+- 'fail' if it returns 0
+
+Each function compares one character from input with one character in the range [0x4a2739-0x4a275d].  
+We get the flag writing down each character in order 
 ### MobCipher
 We are asked to dump a flag from an .apk file.  
 Unzipping the file we see that this is a cordova/ionic app.  
