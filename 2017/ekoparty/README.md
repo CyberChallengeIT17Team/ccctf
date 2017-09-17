@@ -1,4 +1,11 @@
 # [EKOPARTY CTF 2017](https://ctf.ekoparty.org/)
+## Web
+### SecureFile
+We have the code that handles the uploads in this site.  
+We need to find the name of the file.  
+The first eight bytes of `uniqid()` are the POSIX time.  
+Solution source code can be found in [securefile.py](securefile.py)
+
 ## Reversing
 ### Rhapsody
 It is an ELF 64-bit executable.  
