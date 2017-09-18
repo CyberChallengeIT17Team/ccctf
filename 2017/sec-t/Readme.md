@@ -10,3 +10,17 @@ The exploit is Date/date_exploit.py
 ## The gibson
 TODO
 
+## Crypto
+### BadAes
+We have an AES-CBC encrypted file and we are given
+- the key
+- the initialization vector
+- most of the [substitution box](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard#The_SubBytes_step)
+
+Each of the values of the substitution box has to be unique and in the range [0, 255], so the 8 missing values can only be a permutaion of {4, 198, 168, 137, 49, 105, 188, 62}.
+
+We just need to try 8! = 40320 combinations and check which of them contains the string `SECT`.
+
+We need to find the source code of an implementation of aes-cbc and substitute the sbox with our own values and each permutation of the missing values and then compute the reverse sbox.  
+https://github.com/CyberChallengeIT17Team/tiny-AES-c
+http://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/
